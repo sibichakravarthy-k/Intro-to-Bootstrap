@@ -178,6 +178,7 @@
             </div>
         </div>
     </header>
+                                <!-- carousel starts here -->
 
     <div class="container">
         <div class="row row-content">
@@ -237,9 +238,18 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause"><span class="fa fa-pause"></span></button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play"><span class="fa fa-play"></span></button>
+
+
+                    </div>
                 </div>
             </div>
         </div>
+
+                        <!-- Carousel Ends Here  -->
+
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 col-md-3  order-sm-second">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -287,7 +297,7 @@
                 <div class="media">
                     <img class="d-flex mr-3 img-thumbnail align-self-center" src="img/alberto.png" alt="">
                     <div class="media-body">
-                        <h2>Alberto Somayya</h2>
+                        <h2 class="mt-0">Alberto Somayya</h2>
                         <h4>Executive Chef</h4>
                         <p>Award winning three-star Michelin chef with wide International experience having worked
                             closely with
@@ -409,7 +419,19 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
     </script> -->
+<script>
+$(document).ready(function()
+{
+    $('#mycarousel').carousel({interval:2000});
+    $('#carousel-pause]').click(function(){
+        $('mycarousel').carousel('pause');
+    });
+    $('#carousel-play]').click(function(){
+        $('mycarousel').carousel('cycle');
+    });
+})
 
+</script>
 </body>
 
 </html>
