@@ -34,7 +34,7 @@
                             Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" style="cursor:pointer">
+                    <a id="login_button"  style="cursor:pointer">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -171,8 +171,7 @@
                 <div class="col-12 col-sm align-self-center">
                     <img src="./img/logo.png" alt="" class="img-fluid">
                 </div>
-                <div class="col-12 col-sm align-self-center"> <button class="btn btn-block btn-warning" data-toggle="modal"
-                        data-target="#reserveTableModal">
+                <div class="col-12 col-sm align-self-center"> <button class="btn btn-block btn-warning" id="reserveTable">
                         <a name="" style="text-decoration: none; color: black; font: bold">Reserve a Table</a> </button>
                 </div>
             </div>
@@ -307,66 +306,6 @@
             </div>
         </div>
     </div>
-    <!-- <div><a href="" name="move"></a>
-        <form class="move">
-            <div class="container col-12 col-sm-12 col-md-6">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        <div class="row">
-                            <label for="radioButton" class="col-12 col-sm-12 col-md-2">
-                                <h6>Number of Seats </h6>
-                            </label>
-                            <div class="col-md-10 align-self-center">
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio"> 1
-                                    </label>
-                                </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio"> 2
-                                    </label>
-                                </div>
-                                <div class="form-check-inline disabled">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" disabled>3
-                                    </label>
-                                </div>
-                                <div class="form-check-inline disabled">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" disabled>4
-                                    </label>
-                                </div>
-                                <div class="form-check-inline disabled">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" disabled>5
-                                    </label>
-                                </div>
-                                <div class="form-check-inline disabled">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" disabled>6
-                                    </label>
-                                </div>
-                                <div class="form-check-inline disabled">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" disabled>7
-                                    </label>
-                                </div>
-                            </div>
-                            <label for="Date" class="col-12 col-sm-12 col-md-2">
-                                <h6>Date and Time</h6>
-                            </label>
-                            <input type="text" class="col-md-4  form-control" placeholder="Date">
-                            <input type="text" class="col-md-4 offset-md-1 form-control" placeholder="Time">
-                            <button class="btn btn-primary offset-3 offset-md-3 mt-3 align-self-center">Reserve</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div> -->
-
     <footer class="mt-3">
         <div class="container">
             <div class="row">
@@ -417,21 +356,31 @@
     });
     </script> -->
 <script>
+
 $(document).ready(function()
 {
-    $('#mycarousel').carousel({interval:2000});
-    $("#carouselButton").click(function(){
-                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+    $('#mycarousel').carousel({interval:1500});
+    $("#carousel-button-icon").click(function(){
+                if ($("#carousel-button-icon").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass('fa-pause');
-                    $("#carouselButton").children("span").addClass('fa-play');
+                    $("#carousel-button-icon").children("span").removeClass('fa-pause');
+                    $("#carousel-button-icon").children("span").addClass('fa-play');
                 }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                else if ($("#carousel-button-icon").children("span").hasClass('fa-play')){
                     $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                    $("#carousel-button-icon").children("span").removeClass('fa-play');
+                    $("#carousel-button-icon").children("span").addClass('fa-pause');                    
                 }
             });
+            
+     $('#login_button').on('click', function () {
+     $('#loginModal').modal('show');
+
+    })
+
+    $('#reserveTable').on('click',function(){
+        $('#reserveTableModal').modal('show');
+    })
 });
 </script>
 </body>
